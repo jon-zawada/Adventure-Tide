@@ -1,0 +1,36 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "This is a minimum viable product of a personal app Im designing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jon-zawada/MVP.git"
+  },
+  "author": "Jon Zawada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jon-zawada/MVP/issues"
+  },
+  "homepage": "https://github.com/jon-zawada/MVP#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0"
+  }
+}
