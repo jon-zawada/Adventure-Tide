@@ -7,17 +7,19 @@ const config = require('../config.js');
 
 app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
-
 app.get('/tides', (req, res) => {
+  // console.log(req.query);
+	const lat = req.query.latitude;
+	const long = req.query.longitude;
   const uniReq = unirest('GET', 'https://tides.p.rapidapi.com/tides');
   uniReq.query({
-    latitude: '20.00503',
-    longitude: '-155.824615'
+    latitude: lat,
+    longitude: long
   });
 
   uniReq.headers({
     'x-rapidapi-host': 'tides.p.rapidapi.com',
-    "x-rapidapi-key": config.token
+    'x-rapidapi-key': config.token
   });
 
   uniReq.end((uniRes) => {

@@ -14,28 +14,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getTides();
-  }
-
-
-  getTides() {
-    $.ajax({
-      method: 'GET',
-      url: '/tides',
-      success: (res) => {
-        console.log(res);
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
   }
 
   render() {
     return (
       <div className="app">
-        <h2 className="title"> Tide To Go</h2>
-        <SearchBar />
+        <h2 className="title"> Adventure Tide!</h2>
+        {this.state.currentFrom === 0 ? <SearchBar /> : null}
       </div>
     );
   }

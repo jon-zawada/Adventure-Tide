@@ -26,6 +26,10 @@ module.exports = {
     'comma-dangle': 0,
     'import/extensions': 0,
     'no-plusplus': 0,
-    'no-console': 0
+    'no-console': 0,
+    'class-methods-use-this': 0,
+    'prefer-const': 0,
+    'indent': 0,
+    'no-tabs': 0
   },
 };
