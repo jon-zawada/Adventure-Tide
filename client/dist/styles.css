@@ -16,8 +16,13 @@ body {
   padding: 10px;
   border-radius: 25px;
   border-style: groove;
+  cursor: pointer;
 }
 
 #searchBar {
   padding: 10px;
+}
+
+#JournalBtn {
+  float: right;
 }

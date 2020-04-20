@@ -3,22 +3,21 @@
 import React from 'react';
 import $ from 'jquery';
 import CityList from './CityList.jsx';
+import Chart from './Chart.jsx';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       location: '',
-      cities: []
+      cities: [],
+      chartData: ''
     };
     // bindings
     this.changeHandler = this.changeHandler.bind(this);
     this.getCoordinates = this.getCoordinates.bind(this);
     this.getTides = this.getTides.bind(this);
   }
-
-  // latitude: '20.00503',
-  // longitude: '-155.824615'
 
   getCoordinates(event) {
     event.preventDefault();
@@ -46,10 +45,30 @@ class SearchBar extends React.Component {
       url: '/api/tides',
       data: city,
       success: (res) => {
-        console.log(res);
-        // this.setState({
-        //   cities: res.Results
-        // });
+        console.log(res.heights);
+        let { heights } = res;
+        let numberData = [];
+        for (let i = 0; i < 6; i++) {
+          numberData.push(heights[i].height);
+        }
+        console.log(numberData);
+        this.setState({
+          chartData: {
+            labels: ['now', '1 hour', '2 hour', '3 hour', '4 hour', '5 hour'],
+            datasets: [
+              {
+                label: 'Tide Heights',
+                data: numberData,
+                backgroundColor: [
+                  'rgba(54, 162, 235, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(54, 162, 235, 0.6)'
+                ]
+              }
+            ]
+          }
+        });
+        this.setState({
+          cities: []
+        });
       },
       error: (err) => {
         console.log(err);
@@ -78,11 +97,15 @@ class SearchBar extends React.Component {
                 <input type="text" name="location" value={this.state.name} onChange={this.changeHandler} />
               </label>
             </div>
-            <button onClick={this.getCoordinates} type="button">Lets find those tides</button>
+            <button id="tideBtn" onClick={this.getCoordinates} type="button">Lets find those tides</button>
+            <button id="JournalBtn" type="button" onClick={this.props.changePage}>Go To Adventure Journal</button>
           </form>
         </div>
         <div>
           <CityList cities={this.state.cities} getTides={this.getTides} />
+        </div>
+        <div>
+          {this.state.chartData !== '' ? <Chart chartData={this.state.chartData} /> : null}
         </div>
       </div>
     );
