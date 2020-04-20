@@ -1,6 +1,6 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable class-methods-use-this */
 import React from 'react';
-import $ from 'jquery';
 import SearchBar from './SearchBar.jsx';
 
 

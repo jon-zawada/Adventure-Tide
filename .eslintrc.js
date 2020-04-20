@@ -30,6 +30,8 @@ module.exports = {
     'class-methods-use-this': 0,
     'prefer-const': 0,
     'indent': 0,
-    'no-tabs': 0
+    'no-tabs': 0,
+    'react/prop-types': 0,
+    'react/destructuring-assignment': 0
   },
 };

@@ -9,4 +9,15 @@ body {
 #app {
   padding: 10px;
   background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+}
+
+.city {
+  padding: 10px;
+  border-radius: 25px;
+  border-style: groove;
+}
+
+#searchBar {
+  padding: 10px;
 }
