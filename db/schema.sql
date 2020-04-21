@@ -1,0 +1,12 @@
+DROP DATABASE AdventureTide;
+
+CREATE DATABASE IF NOT EXISTS AdventureTide;
+
+USE AdventureTide;
+
+CREATE TABLE IF NOT EXISTS JournalEntries (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE,
+    location VARCHAR(50),
+    entry VARCHAR(8000) DEFAULT 'LOG ME'
+);

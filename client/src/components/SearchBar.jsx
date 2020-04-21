@@ -88,12 +88,12 @@ class SearchBar extends React.Component {
       <div>
         <div id="searchBar">
           <form>
-            <div>
+            <div className="exploring">
               <label>
                 <div>
                   Where we exploring today!
                 </div>
-                City
+                City:
                 <input type="text" name="location" value={this.state.name} onChange={this.changeHandler} />
               </label>
             </div>

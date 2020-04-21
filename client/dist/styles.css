@@ -25,4 +25,55 @@ body {
 
 #JournalBtn {
   float: right;
+  border-radius: 25px;
+  background-color: #0077be;
+  color: white;
+  padding: 10px;
+}
+
+#tideBtn {
+  border-radius: 25px;
+  background-color: #0077be;
+  color: white;
+  padding: 10px;
+
+}
+
+.chartBtn {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "row-one" "row-two";
+}
+
+.entries {
+  padding: 10px;
+  border-radius: 25px;
+  border-style: groove;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "row-one" "row-two";
+}
+
+.locationDate {
+  font-weight: bold;
+}
+
+.updateBtn {
+  float: right;
+  width: 25%;
+  justify-self: end;
+  border-radius: 25px;
+  background-color: #0077be;
+  color: white;
+}
+
+.exploring {
+  padding: 15px;
+}
+
+.title {
+  text-align: center;
 }

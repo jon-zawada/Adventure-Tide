@@ -5,8 +5,16 @@ const express = require('express');
 const app = express();
 const unirest = require('unirest');
 const path = require('path');
+const bodyParser = require('body-parser');
 const port = 3000;
 const config = require('../config.js');
+const Controller = require('./Controller.js');
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 app.use('/', express.static(path.join(__dirname, '/../client/dist')));
 
@@ -51,6 +59,15 @@ app.get('/api/coordinates', (req, res) => {
 
 		res.send(uniRes.body);
 	});
+});
+
+app.get('/api/journal', (req, res) => {
+	Controller.getJournalEntries(req, res);
+});
+
+app.put('/api/journal', (req, res) => {
+	// console.log(req.body);
+	Controller.updateEntry(req, res);
 });
 
 

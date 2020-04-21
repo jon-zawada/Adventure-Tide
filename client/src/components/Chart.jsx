@@ -16,6 +16,10 @@ class Chart extends React.Component {
           data={this.props.chartData}
           options={{}}
         />
+        <div className="chartBtn">
+          <button type="button">Pick a new location</button>
+          <button type="button">Im going adventuring</button>
+        </div>
       </div>
     );
   }
