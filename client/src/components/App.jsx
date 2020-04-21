@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/sort-comp */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/destructuring-assignment */
@@ -18,6 +19,8 @@ class App extends React.Component {
     // bindings
     this.changePage = this.changePage.bind(this);
     this.updateEntry = this.updateEntry.bind(this);
+    this.postDefault = this.postDefault.bind(this);
+    this.homePage = this.homePage.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +31,13 @@ class App extends React.Component {
     event.preventDefault();
     this.setState({
       currentFrom: 1
+    });
+  }
+
+  homePage(event) {
+    event.preventDefault();
+    this.setState({
+      currentFrom: 0
     });
   }
 
@@ -62,12 +72,28 @@ class App extends React.Component {
     });
   }
 
+  postDefault(location, date) {
+    $.ajax({
+      method: 'POST',
+      url: 'api/journal',
+      data: JSON.stringify({ location, date }),
+      contentType: 'application/json',
+      success: () => {
+        alert('Come back later and log your adventure!');
+        this.getJournalEntries();
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
   render() {
     return (
       <div className="app">
         <h2 className="title"> Adventure Tide!</h2>
-        {this.state.currentFrom === 0 ? <SearchBar changePage={this.changePage} /> : null}
-        {this.state.currentFrom === 1 ? <Journal journalEntries={this.state.journalEntries} updateEntry={this.updateEntry} /> : null}
+        {this.state.currentFrom === 0 ? <SearchBar changePage={this.changePage} postDefault={this.postDefault} /> : null}
+        {this.state.currentFrom === 1 ? <Journal journalEntries={this.state.journalEntries} updateEntry={this.updateEntry} homePage={this.homePage} /> : null}
       </div>
     );
   }

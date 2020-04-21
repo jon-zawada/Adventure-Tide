@@ -77,3 +77,29 @@ body {
 .title {
   text-align: center;
 }
+
+.buttonCht {
+  border-radius: 25px;
+  background-color: #0077be;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.homePageBtn {
+  float: center;
+  width: 25%;
+  justify-self: center;
+  border-radius: 25px;
+  background-color: #0077be;
+  color: white;
+  padding: 10px;
+}
+
+#homePage {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "another-row";
+}

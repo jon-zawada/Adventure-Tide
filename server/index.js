@@ -70,5 +70,9 @@ app.put('/api/journal', (req, res) => {
 	Controller.updateEntry(req, res);
 });
 
+app.post('/api/journal', (req, res) => {
+	// console.log(req.body);
+	Controller.postDefault(req, res);
+});
 
 app.listen(port, () => console.log(`MVP listening at http://localhost:${port}`));

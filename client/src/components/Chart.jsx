@@ -17,8 +17,8 @@ class Chart extends React.Component {
           options={{}}
         />
         <div className="chartBtn">
-          <button type="button">Pick a new location</button>
-          <button type="button">Im going adventuring</button>
+          <button type="button" className="buttonCht">Pick a new location</button>
+          <button type="button" className="buttonCht" onClick={() => { this.props.postDefault(this.props.location, this.props.today); }}>Im going adventuring</button>
         </div>
       </div>
     );

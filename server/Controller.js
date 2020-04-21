@@ -13,6 +13,7 @@ const getJournalEntries = (req, res) => {
 const updateEntry = (req, res) => {
   let entry = req.body;
   // console.log(entry);
+  // eslint-disable-next-line no-unused-vars
   Models.updateEntry(entry, (err, data) => {
     if (err) {
       res.status(401).send(err);
@@ -22,4 +23,15 @@ const updateEntry = (req, res) => {
   });
 };
 
-module.exports = { getJournalEntries, updateEntry };
+const postDefault = (req, res) => {
+  let entry = req.body;
+  Models.postDefault(entry, (err, data) => {
+    if (err) {
+      res.status(401).send(err);
+    } else {
+      res.end();
+    }
+  });
+};
+
+module.exports = { getJournalEntries, updateEntry, postDefault };

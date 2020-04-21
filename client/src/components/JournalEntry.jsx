@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 const JournalEntry = ({ entry, updateEntry }) => {
@@ -13,7 +13,7 @@ const JournalEntry = ({ entry, updateEntry }) => {
         </div>
         {!updateClicked ? <div className="entryScript">
           {value}
-        </div> : <div><textarea value={value} onChange={(e) => {updateValue(e.target.value)}}></textarea><button>submit</button></div>}
+        </div> : <div><textarea value={value} onChange={(e) => {updateValue(e.target.value)}}></textarea></div>}
       </div>
       <button className="updateBtn" 
       type="button" onClick={() => {

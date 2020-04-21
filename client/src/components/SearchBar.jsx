@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import $ from 'jquery';
+import moment from 'moment';
 import CityList from './CityList.jsx';
 import Chart from './Chart.jsx';
 
@@ -11,7 +12,8 @@ class SearchBar extends React.Component {
     this.state = {
       location: '',
       cities: [],
-      chartData: ''
+      chartData: '',
+      today: moment().format()
     };
     // bindings
     this.changeHandler = this.changeHandler.bind(this);
@@ -105,7 +107,7 @@ class SearchBar extends React.Component {
           <CityList cities={this.state.cities} getTides={this.getTides} />
         </div>
         <div>
-          {this.state.chartData !== '' ? <Chart chartData={this.state.chartData} /> : null}
+          {this.state.chartData !== '' ? <Chart chartData={this.state.chartData} postDefault={this.props.postDefault} today={this.state.today} location={this.state.location} /> : null}
         </div>
       </div>
     );
