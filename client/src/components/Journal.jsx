@@ -1,6 +1,6 @@
 /* eslint-disable arrow-parens */
 import React from 'react';
-import JournalEntry from './JournalEntry.jsx'
+import JournalEntry from './JournalEntry.jsx';
 
 const Journal = ({ journalEntries, updateEntry, homePage }) => (
   <div className="journalList">
@@ -8,7 +8,7 @@ const Journal = ({ journalEntries, updateEntry, homePage }) => (
       <JournalEntry entry={entry} key={entry.id} updateEntry={updateEntry} />
     ))}
     <div id="homePage">
-      <button className="homePageBtn" type="button" onClick={(event) => { homePage(event); } }>Home Page</button>
+      <button className="homePageBtn" type="button" onClick={(event) => { homePage(event); }}>Home Page</button>
     </div>
   </div>
 );

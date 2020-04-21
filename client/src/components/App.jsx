@@ -79,7 +79,7 @@ class App extends React.Component {
       data: JSON.stringify({ location, date }),
       contentType: 'application/json',
       success: () => {
-        alert('Come back later and log your adventure!');
+        // alert('Come back later and log your adventure!');
         this.getJournalEntries();
       },
       error: (err) => {

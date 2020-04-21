@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const Models = require('./Models.js');
 
 const getJournalEntries = (req, res) => {

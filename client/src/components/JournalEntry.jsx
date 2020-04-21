@@ -21,7 +21,7 @@ const JournalEntry = ({ entry, updateEntry }) => {
         if(updateClicked) {
           updateEntry(value, entry.id);
         }
-        }}>update</button>
+        }}>{!updateClicked ? 'edit' : 'update'}</button>
     </div>
   );
 };

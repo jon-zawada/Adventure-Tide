@@ -29,6 +29,11 @@ body {
   background-color: #0077be;
   color: white;
   padding: 10px;
+  cursor: pointer;
+}
+
+#JournalBtn:focus {
+  outline: none;
 }
 
 #tideBtn {
@@ -36,7 +41,11 @@ body {
   background-color: #0077be;
   color: white;
   padding: 10px;
+  cursor: pointer;
+}
 
+#tideBtn:focus {
+  outline: none;
 }
 
 .chartBtn {
@@ -45,6 +54,11 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
   "row-one" "row-two";
+  cursor: pointer;
+}
+
+.chartBtn:focus {
+  outline: none;
 }
 
 .entries {
@@ -68,6 +82,11 @@ body {
   border-radius: 25px;
   background-color: #0077be;
   color: white;
+  cursor: pointer;
+}
+
+.updateBtn:focus {
+  outline: none;
 }
 
 .exploring {
@@ -76,6 +95,16 @@ body {
 
 .title {
   text-align: center;
+  /* color: white;
+  background-color: #0077be;
+  width: 75%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "one-row"; 
+  padding: 10px;
+  border-radius: 25px; */
+  font-size: 30px;
 }
 
 .buttonCht {
@@ -86,6 +115,10 @@ body {
   cursor: pointer;
 }
 
+.buttonCht:focus {
+  outline: none;
+}
+
 .homePageBtn {
   float: center;
   width: 25%;
@@ -94,6 +127,11 @@ body {
   background-color: #0077be;
   color: white;
   padding: 10px;
+  cursor: pointer;
+}
+
+.homePageBtn:focus {
+  outline: none;
 }
 
 #homePage {
